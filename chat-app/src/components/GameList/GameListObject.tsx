@@ -1,7 +1,7 @@
 import React from 'react';
 import {api} from "../../utils";
 import "./gameList.css";
-import PlatformTags from "./PlatformTags";
+import PlatformTagList from "./PlatformTagList";
 
 interface gameProp {
     game:Game
@@ -50,7 +50,7 @@ const GameListObject = (props: gameProp) => {
                     <img src={creatorImage} className="creatorImageStyle" alt="" onError={(e) => {
                         e.currentTarget.src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png";
                     }}/>
-                    <PlatformTags platforms={platforms} />
+                    <PlatformTagList platforms={platforms} />
                 </div>
             </div>
         </>

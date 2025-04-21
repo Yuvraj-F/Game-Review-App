@@ -4,7 +4,7 @@ interface PlatformProp {
     platforms:Platform[]
 }
 
-const PlatformTags = (props:PlatformProp) => {
+const PlatformTagList = (props:PlatformProp) => {
 
     const platforms = props.platforms.map(platform =>
         <div key={platform.platformId} className="platformTag">{platform.name}</div>
@@ -19,4 +19,4 @@ const PlatformTags = (props:PlatformProp) => {
     )
 }
 
-export default PlatformTags;
+export default PlatformTagList;
