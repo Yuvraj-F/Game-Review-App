@@ -3,12 +3,20 @@ import {api} from "../../utils"
 import GameListObject from "./GameListObject";
 import "./gameList.css";
 
-const GameList = () => {
+interface GameListProp {
+    games?: Game[]
+}
+
+const GameList = (props:GameListProp) => {
 
     const [games, setGames] = React.useState<Array<Game>>([])
 
     React.useEffect(() => {
-        get_games();
+        if (props.games) {
+            setGames(props.games)
+        } else {
+            get_games();
+        }
     }, [])
 
     const get_games = () => {
