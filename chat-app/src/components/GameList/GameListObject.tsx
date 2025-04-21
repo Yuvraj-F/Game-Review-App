@@ -12,8 +12,10 @@ const GameListObject = (props: gameProp) => {
     const [genre, setGenre] = React.useState<Genre>({genreId:-1, name:""})
     const [platforms, setPlatforms] = React.useState<Array<Platform>>([])
     const game = props.game
-    const gameImage = `http://localhost:4941/api/v1/games/${game.gameId}/image`;
-    const creatorImage = `http://localhost:4941/api/v1/users/${game.creatorId}/image`;
+    const creationDate = new Date(game.creationDate).toLocaleDateString()
+    const creationTime = new Date(game.creationDate).toLocaleTimeString()
+    const gameImage = `http://localhost:4941/api/v1/games/${game.gameId}/image`
+    const creatorImage = `http://localhost:4941/api/v1/users/${game.creatorId}/image`
 
     React.useEffect(() => {
         api.get("games/genres")
@@ -40,10 +42,12 @@ const GameListObject = (props: gameProp) => {
                     <img src={gameImage} className="coverImageStyle" alt=""/>
                     <div className="gameDetails">
                         <div>Tile: {game.title}</div>
-                        <div>Price: ${game.price}</div>
                         <div>Rating: {game.rating}</div>
                         <div>Creator: {game.creatorFirstName} {game.creatorLastName}</div>
                         <div>Genre: {genre.name}</div>
+                        <div>Price: ${game.price}</div>
+                        <div>Created: {creationDate}</div>
+                        <div>Created: {creationTime}</div>
                     </div>
                 </div>
                 <div className="gameExtendedContent">
