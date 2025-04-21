@@ -36,6 +36,9 @@
 }
 
 .gameExtendedContent {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 }
 
 .coverImageStyle {
@@ -45,8 +48,14 @@
 }
 
 .creatorImageStyle {
-    width:100px;
-    height:100px
+    position:relative;
+    right:20px;
+    width:80px;
+    height:80px;
+    border:4px solid white;
+    border-radius: 100%;
+    /*mask-image:radial-gradient(circle, black 50%, white);*/
+    clip-path: circle();
 }
 
 .platformContainer {
