@@ -1,0 +1,11 @@
+.headerStyle {
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+    position:sticky;
+    top:0;
+    z-index: 1000;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}

@@ -10,3 +10,13 @@ type Game = {
     price:number,
     creationDate: string
 }
+
+type Genre = {
+    genreId: number,
+    name: string
+}
+
+type Platform = {
+    platformId: number,
+    name: string
+}

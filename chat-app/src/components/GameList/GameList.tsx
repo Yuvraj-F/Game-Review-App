@@ -31,13 +31,12 @@ const GameList = () => {
     }
 
     return (
-        <div>
-            <h1>Games</h1>
+        <>
             <div style={gameListStyle}>
                 {game_objects()}
             </div>
 
-        </div>
+        </>
     )
 }
 

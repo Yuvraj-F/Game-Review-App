@@ -14,7 +14,7 @@
 .gameContent {
     display:flex;
     flex-direction:column;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items:flex-start;
     padding:4px;
 }
@@ -25,11 +25,10 @@
     mask-image:linear-gradient(to bottom, black 75%, transparent)
 }
 
-.backgroundImageStyle {
+.platformContainer {
     position:absolute;
-    width:240px;
-    height:400px;
-    filter: blur(100px);
-    z-index: -1;
 }
 
+.platformTag {
+    border:1px solid black;
+}
