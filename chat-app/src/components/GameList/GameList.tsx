@@ -1,6 +1,7 @@
 import React from 'react';
 import {api} from "../../utils"
 import GameListObject from "./GameListObject";
+import "./gameList.css";
 
 const GameList = () => {
 
@@ -23,16 +24,9 @@ const GameList = () => {
         <GameListObject key={game.gameId} game={game}/>
     )
 
-    const gameListStyle:React.CSSProperties = {
-        display:"grid",
-        gridTemplateColumns: "auto auto auto auto auto",
-        justifyItems:"center",
-        margin:"20px"
-    }
-
     return (
         <>
-            <div style={gameListStyle}>
+            <div className="gameListStyle">
                 {game_objects()}
             </div>
 

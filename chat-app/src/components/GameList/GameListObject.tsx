@@ -36,15 +36,22 @@ const GameListObject = (props: gameProp) => {
     return (
         <>
             <div className="gameListObject">
-                <img src={gameImage} className="coverImageStyle" alt="Cover Image"/>
                 <div className="gameContent">
-                    <div>Tile: {game.title}</div>
-                    <div>Price: ${game.price}</div>
-                    <div>Rating: {game.rating}</div>
-                    <div>Creator: {game.creatorFirstName} {game.creatorLastName}</div>
-                    <div>Genre: {genre.name}</div>
+                    <img src={gameImage} className="coverImageStyle" alt=""/>
+                    <div className="gameDetails">
+                        <div>Tile: {game.title}</div>
+                        <div>Price: ${game.price}</div>
+                        <div>Rating: {game.rating}</div>
+                        <div>Creator: {game.creatorFirstName} {game.creatorLastName}</div>
+                        <div>Genre: {genre.name}</div>
+                    </div>
                 </div>
-                <PlatformTags platforms={platforms} />
+                <div className="gameExtendedContent">
+                    <img src={creatorImage} className="creatorImageStyle" alt="" onError={(e) => {
+                        e.currentTarget.src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png";
+                    }}/>
+                    <PlatformTags platforms={platforms} />
+                </div>
             </div>
         </>
     )
