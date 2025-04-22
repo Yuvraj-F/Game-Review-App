@@ -1,0 +1,16 @@
+.gameImage {
+    width: 240px;
+    height: 240px;
+    /*mask-image: linear-gradient(to bottom, black 75%, transparent)*/
+}
+
+.userImage {
+    position: relative;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    /*border: 4px solid white;*/
+    border: var(--border);
+    border-radius: 100%;
+    clip-path: circle();
+}

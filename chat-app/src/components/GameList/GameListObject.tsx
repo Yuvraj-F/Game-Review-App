@@ -1,7 +1,9 @@
 import React from 'react';
 import {api} from "../../utils";
+import {Link, useNavigate} from "react-router-dom";
 import "./gameList.css";
 import PlatformTagList from "./PlatformTagList";
+import {GameImage, UserImage} from "../Image";
 
 interface gameProp {
     game:Game
@@ -9,13 +11,13 @@ interface gameProp {
 
 const GameListObject = (props: gameProp) => {
 
+    const navigate = useNavigate();
+
+    const game = props.game
     const [genre, setGenre] = React.useState<Genre>({genreId:-1, name:""})
     const [platforms, setPlatforms] = React.useState<Array<Platform>>([])
-    const game = props.game
     const creationDate = new Date(game.creationDate).toLocaleDateString()
     const creationTime = new Date(game.creationDate).toLocaleTimeString()
-    const gameImage = api.defaults.baseURL + `games/${game.gameId}/image`
-    const creatorImage = api.defaults.baseURL + `users/${game.creatorId}/image`
 
     React.useEffect(() => {
         api.get("games/genres")
@@ -37,9 +39,9 @@ const GameListObject = (props: gameProp) => {
 
     return (
         <>
-            <div className="gameListObject">
+            <div className="gameListObject" onClick={() => navigate(`/games?id=${game.gameId}`)}>
                 <div className="gameContent">
-                    <img src={gameImage} className="coverImageStyle" alt=""/>
+                    <GameImage gameId={game.gameId}/>
                     <div className="gameDetails">
                         <div>Tile: {game.title}</div>
                         <div>Rating: {game.rating}</div>
@@ -51,9 +53,7 @@ const GameListObject = (props: gameProp) => {
                     </div>
                 </div>
                 <div className="gameExtendedContent">
-                    <img src={creatorImage} className="creatorImageStyle" alt="" onError={(e) => {
-                        e.currentTarget.src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png";
-                    }}/>
+                    <UserImage userId={game.creatorId}/>
                     <PlatformTagList platforms={platforms} />
                 </div>
             </div>
