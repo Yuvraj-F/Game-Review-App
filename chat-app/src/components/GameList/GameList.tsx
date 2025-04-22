@@ -14,10 +14,8 @@ const GameList = (props:GameListProp) => {
     React.useEffect(() => {
         if (props.games) {
             setGames(props.games)
-        } else {
-            get_games();
         }
-    }, [])
+    }, [props.games])
 
     const get_games = () => {
         api.get("/games")

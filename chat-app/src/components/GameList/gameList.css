@@ -3,6 +3,7 @@
     grid-template-columns: repeat(auto-fill, 380px);
     grid-auto-flow: row;
     justify-items: center;
+    min-width: var(--min-width);
     margin: 20px
 }
 

@@ -1,0 +1,10 @@
+.page {
+    position:relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: var(--min-width);
+
+    justify-content: space-between;
+}
