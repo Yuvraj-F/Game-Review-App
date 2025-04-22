@@ -14,8 +14,8 @@ const GameListObject = (props: gameProp) => {
     const game = props.game
     const creationDate = new Date(game.creationDate).toLocaleDateString()
     const creationTime = new Date(game.creationDate).toLocaleTimeString()
-    const gameImage = `http://localhost:4941/api/v1/games/${game.gameId}/image`
-    const creatorImage = `http://localhost:4941/api/v1/users/${game.creatorId}/image`
+    const gameImage = api.defaults.baseURL + `games/${game.gameId}/image`
+    const creatorImage = api.defaults.baseURL + `users/${game.creatorId}/image`
 
     React.useEffect(() => {
         api.get("games/genres")

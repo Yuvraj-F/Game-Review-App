@@ -1,6 +1,7 @@
 .gameListStyle {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fill, 380px);
+    grid-auto-flow: row;
     justify-items: center;
     margin: 20px
 }
