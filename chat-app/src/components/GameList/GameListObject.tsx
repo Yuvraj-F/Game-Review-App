@@ -39,7 +39,7 @@ const GameListObject = (props: gameProp) => {
 
     return (
         <>
-            <div className="gameListObject" onClick={() => navigate(`/games?id=${game.gameId}`)}>
+            <div className="gameListObject" onClick={() => navigate(`/games/${game.gameId}`)}>
                 <div className="gameContent">
                     <GameImage gameId={game.gameId}/>
                     <div className="gameDetails">

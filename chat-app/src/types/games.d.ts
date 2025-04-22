@@ -11,6 +11,22 @@ type Game = {
     creationDate: string
 }
 
+type GameDetails = {
+    gameId: number,
+    title: string,
+    description: string,
+    genreId: number,
+    creatorId: number,
+    creatorFirstName: string,
+    creatorLastName: string,
+    rating: number,
+    platformIds:number[],
+    price:number,
+    creationDate: string,
+    numberOfOwners: number,
+    numberOfWishlists: number
+}
+
 type Genre = {
     genreId: number,
     name: string

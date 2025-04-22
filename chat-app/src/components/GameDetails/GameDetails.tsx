@@ -1,29 +1,26 @@
 import React from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import {api} from "../../utils";
+import {GameImage, UserImage} from "../Image";
+import Rating from "./Rating";
 
-const GameDetails = () => {
+interface GameDetailsProps {
+    game: GameDetails
+}
 
-    const {id} = useParams()
-    const navigate = useNavigate()
+const GameDetails = (props:GameDetailsProps) => {
 
-    const [game, setGame] = React.useState<Game>()
+    const game = props.game
 
-    React.useEffect(() => {
-        getGame()
-    }, [])
-
-    const getGame = () => {
-        api.get(`games/${id}`)
-            .then((res) => {
-                setGame(res.data)
-            }, (error) => {
-                navigate("*")
-            })
-    }
 
     return (
         <>
+            <GameImage gameId={game.gameId} large={true}/>
+            <div>
+                <h1>{game.title}</h1>
+                <div>{game.description}</div>
+            </div>
+            <Rating rating={game.rating}/>
         </>
     )
 }

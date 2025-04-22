@@ -2,7 +2,7 @@ import {api} from "../../utils";
 import "./image.css";
 
 interface GameImageProp {
-    userId:number
+    userId:number|string
 }
 
 const UserImage = (props:GameImageProp) => {
