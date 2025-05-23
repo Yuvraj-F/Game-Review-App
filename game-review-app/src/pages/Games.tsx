@@ -10,7 +10,7 @@ const Games = () => {
 
     return (
         <div className="page">
-            <Header title="Games" />
+            {/*<Header title="Games" />*/}
             <SearchBar setGameResults={setGameResults}/>
             <GameList games={gameResults}></GameList>
         </div>

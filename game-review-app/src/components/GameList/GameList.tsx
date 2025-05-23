@@ -10,6 +10,8 @@ interface GameListProp {
 const GameList = (props:GameListProp) => {
 
     const [games, setGames] = React.useState<Array<Game>>([])
+    const [genres, setGenres] = React.useState<Array<Genre>>([]);
+    const [platforms, setPlatforms] = React.useState<Array<Platform>>([]);
 
     React.useEffect(() => {
         if (props.games) {
@@ -17,17 +19,27 @@ const GameList = (props:GameListProp) => {
         }
     }, [props.games])
 
-    const get_games = () => {
-        api.get("/games")
+    React.useEffect(() => {
+        api.get("games/genres")
             .then((res) => {
-                setGames(res.data.games)
-            }, (error) => {
-
+                setGenres(res.data);
+            }, (error) =>{
             })
-    }
+
+        api.get("games/platforms")
+            .then((res) => {
+                setPlatforms(res.data);
+            }, (error) =>{
+            })
+    }, [])
 
     const game_objects = () => games.map(game =>
-        <GameListObject key={game.gameId} game={game}/>
+        <GameListObject
+            key={game.gameId}
+            game={game}
+            genres={genres}
+            platforms={platforms}
+        />
     )
 
     return (

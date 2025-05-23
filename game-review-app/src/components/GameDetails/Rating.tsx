@@ -24,8 +24,8 @@ const Rating = (props:RatingProp) => {
     return (
         <>
             <div className="ratingBase">
-                <div className="ratingRing" style={{"backgroundColor":ratingColor()}}>
-                    <div className="ratingDisplay" style={{color:ratingColor()}}>
+                <div className="ratingRing">
+                    <div className="ratingDisplay">
                         {rating}/10
                     </div>
                 </div>

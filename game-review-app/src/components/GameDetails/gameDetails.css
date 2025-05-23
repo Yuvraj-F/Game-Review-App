@@ -10,8 +10,7 @@
     align-items: center;
 
     clip-path: circle();
-    border-radius: 50%;
-    border: var(--border);
+
 }
 
 .ratingRing {
@@ -22,7 +21,6 @@
 
     justify-content: center;
     align-items: center;
-
     /*clip-path: circle();*/
     border-radius: 50%;
 }
@@ -39,7 +37,12 @@
     font-size: 20px;
 
     clip-path: circle();
+    border: var(--border);
     border-radius: 50%;
-    background-color: whitesmoke;
+    background-color: var(--blue-semi-trans);
     box-shadow: 0 0 4px var(--color-border-gray);
+}
+
+.ratingText {
+    font-size: 20px;
 }

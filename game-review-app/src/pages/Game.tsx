@@ -29,7 +29,7 @@ const Game = () => {
     const [game, setGame] = React.useState<GameDetails>(defaultGame)
 
     React.useEffect(() => {
-        getGame()
+            getGame()
     }, [id])
 
     const getGame = () => {
@@ -44,7 +44,7 @@ const Game = () => {
 
     return (
         <div className="page">
-            <Header title="Game" />
+            {/*<Header title="Game" />*/}
             <div className="flexContainer">
                 <GameDetails game={game}></GameDetails>
             </div>

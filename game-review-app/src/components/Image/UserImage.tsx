@@ -1,11 +1,11 @@
 import {api} from "../../utils";
 import "./image.css";
 
-interface GameImageProp {
+interface UserImageProp {
     userId:number|string
 }
 
-const UserImage = (props:GameImageProp) => {
+const UserImage = (props:UserImageProp) => {
 
     const userId = props.userId
     const userImage = api.defaults.baseURL + `users/${userId}/image`
