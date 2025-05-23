@@ -11,10 +11,10 @@ const Filter = (props:filterProps) => {
 
     const {setMaxPrice, setGenreIds, setPlatformIds} = props
     const [price, setPrice] = React.useState(Number.POSITIVE_INFINITY)
-    // const [genreIds, setGenreIds] = React.useState([])
-    // const [platformIds, setPlatformIds] = React.useState([])
-    const [selectedGenres, setSelectedGenres] = React.useState<Genre[]>([])
-    const [selectedPlatforms, setSelectedPlatforms] = React.useState<Platform[]>([])
+    const [selectedGenreIds, setSelectedGenreIds] = React.useState<number[]>([])
+    const [selectedPlatformIds, setSelectedPlatformIds] = React.useState<number[]>([])
+    const [Genres, setSelectedGenres] = React.useState<Genre[]>([])
+    const [Platforms, setSelectedPlatforms] = React.useState<Platform[]>([])
 
     React.useEffect(() => {
         api.get("games/genres")
@@ -44,10 +44,40 @@ const Filter = (props:filterProps) => {
         setPrice(price)
     }
 
+    const updateGenreState = (genre:Genre) => {
+        setSelectedGenreIds(prev => {
+            const newGenreIds = prev.includes(genre.genreId)
+                ? prev.filter(id => id !== genre.genreId)
+                : [...prev, genre.genreId]
+
+            setGenreIds(newGenreIds)
+            return newGenreIds
+        })
+    }
+
+    const updatePlatformState = (platform:Platform) => {
+        setSelectedPlatformIds(prev => {
+            const newPlatformIds = prev.includes(platform.platformId)
+                ? prev.filter(id => id !== platform.platformId)
+                : [...prev, platform.platformId]
+
+            setPlatformIds(newPlatformIds)
+            return newPlatformIds
+        })
+
+    }
+
     const getGenres = () => {
         return (
-            selectedGenres.map((genre:Genre) =>
-                <button key={genre.genreId} className="genreButton">{genre.name}</button>
+            Genres.map((genre:Genre) => {
+                    const buttonClass = selectedGenreIds.includes(genre.genreId)? "genreButton selected": "genreButton"
+                    return (
+                        <button key={genre.genreId} className={buttonClass}
+                            onClick={() => updateGenreState(genre)}>
+                        {genre.name}
+                    </button>
+                    )
+                }
             )
         )
 
@@ -55,8 +85,15 @@ const Filter = (props:filterProps) => {
 
     const getPlatforms = () => {
         return (
-            selectedPlatforms.map((platform:Platform) =>
-                <button key={platform.platformId} className="platformButton">{platform.name}</button>
+            Platforms.map((platform:Platform) => {
+                const buttonClass = selectedPlatformIds.includes(platform.platformId)? "platformButton selected": "platformButton"
+                return (
+                    <button key={platform.platformId} className={buttonClass}
+                            onClick={() => updatePlatformState(platform)}>
+                        {platform.name}
+                    </button>
+                    )
+                }
             )
         )
 
@@ -65,19 +102,21 @@ const Filter = (props:filterProps) => {
     return (
         <>
             <div className="filtersContainer">
-                <div>
-                    <label style={{margin:4}}>Max Price: </label>
+                <div style={{margin:8}}>
+                    <label style={{marginRight:4}}>Max Price: </label>
                     <span className="dollarSign">$</span>
-                    <input type="number" min="0" value={price} id="price" onChange={updatePriceState} className="priceInput"
+                    <input type="number" min="0" value={price.toString()} id="price" onChange={updatePriceState} className="priceInput"
                         placeholder="Type numerical price"/>
                 </div>
                 <div className="genreContainer">
-                    <ul>
+                    <label>Genres: </label>
+                    <ul style={{margin:4, padding:0}}>
                         {getGenres()}
                     </ul>
                 </div>
                 <div className="platformContainerRow">
-                    <ul>
+                    <label>Platforms: </label>
+                    <ul style={{margin:4, padding:0}}>
                         {getPlatforms()}
                     </ul>
                 </div>

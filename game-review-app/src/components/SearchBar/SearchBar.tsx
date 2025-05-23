@@ -28,21 +28,7 @@ const SearchBar = (props:SearchProps) => {
 
     React.useEffect(() => {
         getGames()
-    }, [q])
-
-    React.useEffect(() => {
-        api.get("games/genres")
-            .then((res) => {
-                setGenreIds(res.data.map((genre:Genre) => genre.genreId))
-            }, (error) =>{
-            })
-
-        api.get("games/platforms")
-            .then((res) => {
-                setPlatformIds(res.data.map((platform:Platform) => platform.platformId))
-            }, (error) =>{
-            })
-    }, [])
+    }, [q, price, genreIds, platformIds, sortBy])
 
 
     const getGames = () => {
@@ -50,14 +36,23 @@ const SearchBar = (props:SearchProps) => {
         let params = {}
 
         if (q.trim() !== "") {
-            params = {...params, q:q}
+            params = {...params, q:q.trim()}
         }
 
         if (price !== Number.POSITIVE_INFINITY) {
             params = {...params, price:price}
         }
 
-        params = {...params, genreIds:genreIds, platformIds:platformIds, sortBy:sortBy}
+        if (genreIds.length !== 0) {
+            params = {...params, genreIds:genreIds}
+        }
+
+        if (platformIds.length !== 0) {
+            params = {...params, platformIds:platformIds}
+        }
+
+        params = {...params, sortBy:sortBy}
+        console.log(`params: ${JSON.stringify(params)}`)
 
         api.get("games", {params: params})
             .then((res) => {
@@ -67,11 +62,7 @@ const SearchBar = (props:SearchProps) => {
     }
 
     const updateQState = (event:React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.value.trim() !== "") {
-                setQ(event.target.value.trim())
-            }
-
-        setQ("")
+        setQ(event.target.value.trim())
     }
 
     return (

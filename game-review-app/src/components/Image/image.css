@@ -9,15 +9,12 @@
 .gameImageLarge {
     width: 640px;
     height: 640px;
-    opacity: 0.8;
     border: var(--border);
 }
 
 .userImage {
     width: 80px;
     height: 80px;
-    background-color: var(--blue-semi-trans);
-    opacity: 0.75;
     border: var(--border);
     margin: 8px;
 }

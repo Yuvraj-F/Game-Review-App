@@ -38,6 +38,7 @@ const GameListObject = (props: gameProp) => {
                         <div className="ratingText">{game.rating}/10</div>
                     </div>
                 </div>
+                <div className="userImageConnector"/>
                 <div className="gameExtendedContent">
                     <UserImage userId={game.creatorId}/>
                     <PlatformTagList platforms={platforms} />

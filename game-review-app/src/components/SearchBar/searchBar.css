@@ -24,8 +24,8 @@
 .filtersContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
 
     min-width: var(--min-width);
     padding: var(--box-margin);
@@ -50,37 +50,60 @@
 .genreContainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
 }
 
 .platformContainerRow {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
 }
 
 .genreButton{
     display: inline-block;
+    font-weight: bold;
     color: var(--dark-blue);
-    background: var(--blue);
+    background: var(--blue-disable);
     padding: 2px 8px;
     margin: 4px;
-    border-radius: 12px;
+    /*border-radius: 12px;*/
     width: fit-content;
     border: 0;
-    box-shadow: 0 0 4px var(--blue);
 }
 
 .genreButton:hover {
+    color: var(--blue)
+}
 
+.genreButton.selected {
+    color: var(--dark-blue);
+    background: var(--blue);
+    box-shadow: 0 0 4px var(--blue);
 }
 
 .platformButton {
     display: inline-block;
-    color: var(--blue);
-    border: var(--border);
-    box-shadow: inset 0 0 4px;
+    color: var(--blue-disable);
     background: var(--blue-semi-trans);
+    border: 1px solid transparent;
     padding: 2px 8px;
     /*padding: 4px;*/
     margin: 4px;
     width: fit-content;
+}
+
+.platformButton:hover {
+    border: 1px solid var(--blue-disable);
+}
+
+.platformButton.selected {
+    color: var(--blue);
+    background: var(--blue-semi-trans);
+    border: var(--border);
+    border-width: 1px;
+    box-shadow: inset 0 0 4px;
 }

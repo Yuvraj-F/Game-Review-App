@@ -8,6 +8,7 @@
 }
 
 .gameListObject {
+    position: relative;
     display: flex;
     flex-direction: row;
     margin: 40px;
@@ -16,6 +17,15 @@
 
 .gameListObject:hover {
     transform: translateY(-8px);
+}
+
+.userImageConnector {
+    position: absolute;
+    top: 40px;
+    left: 245px;
+    width: 10px;
+    height: 2px;
+    background-color: var(--blue);
 }
 
 
@@ -55,6 +65,7 @@
     display: inline-block;
     color: var(--blue);
     border: var(--border);
+    border-width: 1px;
     box-shadow: inset 0 0 4px;
     background: var(--blue-semi-trans);
     padding: 2px 8px;
@@ -74,6 +85,7 @@
 .genreTag{
     display: inline-block;
     color: var(--dark-blue);
+    font-weight: bold;
     background: var(--blue);
     padding: 2px 8px;
     margin: 4px;

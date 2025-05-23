@@ -18,7 +18,8 @@
   --blue: #87e3d7;
   --red: #e71100;
   --dark-blue: #020511;
-  /*--blue-semi-trans: rgba(144, 224, 244, 0.25);*/
+  --blue-disable: #79aaa6;
+  --dark-blue-disable: #3e4c71;
 
   --blue-semi-trans: rgb(6, 51, 60, 0.85);
   --grid-color: rgba(193, 114, 17, 0.31);
