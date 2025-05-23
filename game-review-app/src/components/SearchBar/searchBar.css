@@ -8,6 +8,13 @@
     padding: var(--box-margin);
 }
 
+.searchInline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .searchBox {
     font-size: var(--max-font-size);
     width: clamp(400px, 50%, 800px);
@@ -15,10 +22,11 @@
     background: var(--blue-semi-trans);
     color: var(--blue);
     border: var(--border);
+    margin-right: 30px;
 }
 
 .searchBox::placeholder {
-    color: var(--blue-semi-trans);
+    color: var(--blue-disable);
 }
 
 .filtersContainer {
@@ -39,12 +47,19 @@
 }
 
 .priceInput::placeholder {
-    color: var(--blue-semi-trans);
+    color: var(--blue-disable);
 }
 
 .dollarSign {
     margin-right: 4px;
     font-weight: bold;
+}
+
+.sortInput {
+    height: 50%;
+    background: var(--blue-semi-trans);
+    color: var(--blue);
+    border: var(--border);
 }
 
 .genreContainer {

@@ -1,0 +1,14 @@
+.errorBanner {
+    padding: 16px;
+    background: var(--red-semi-trans);
+    color: var(--red);
+    font-weight: bold;
+    border: var(--border);
+    border-color: var(--red);
+    transition: translate 0.5s ease, opacity 0.5s ease;
+    width: fit-content;
+}
+
+.errorBanner.fade-out {
+    opacity: 0;
+}

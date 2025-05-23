@@ -16,11 +16,11 @@
   /*new colors*/
   --green: #2af219;
   --blue: #87e3d7;
-  --red: #e71100;
+  --red: #fb1e0d;
   --dark-blue: #020511;
   --blue-disable: #79aaa6;
   --dark-blue-disable: #3e4c71;
-
+  --red-semi-trans: rgba(81, 12, 6, 0.62);
   --blue-semi-trans: rgb(6, 51, 60, 0.85);
   --grid-color: rgba(193, 114, 17, 0.31);
   --border: 3px solid var(--blue);
