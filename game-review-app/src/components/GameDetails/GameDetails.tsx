@@ -1,5 +1,6 @@
 import React from 'react';
 import {GameImage, UserImage} from "../Image";
+import {DateTimeFormat} from "../../utils"
 import Rating from "./Rating";
 import PlatformTagList from "../GameList/PlatformTagList";
 
@@ -15,12 +16,9 @@ const GameDetails = (props:GameDetailsProps) => {
     const genre = props.genres.find(g => g.genreId === game.genreId) || {genreId: -1, name: ""}
     const platforms = props.platforms.filter(p => game.platformIds.includes(p.platformId))
 
-    //Padding suggested by chat gpt to keep text consistent and avoid flickering --start--
-    const pad = (n: number) => n.toString().padStart(2, '0');
-    //Padding suggested by chat gpt to keep text consistent and avoid flickering --end--
     const creationDateTime = new Date(game.creationDate)
-    const creationDate = creationDateTime.toLocaleDateString()
-    const creationTime = `${pad(creationDateTime.getHours())}:${pad(creationDateTime.getMinutes())}:${pad(creationDateTime.getSeconds())}`
+    const creationDate = DateTimeFormat.getDate(creationDateTime);
+    const creationTime = DateTimeFormat.getTime(creationDateTime);
 
 
 

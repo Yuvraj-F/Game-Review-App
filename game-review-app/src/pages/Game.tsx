@@ -6,6 +6,7 @@ import "./page.css";
 import {api} from "../utils";
 import {ErrorBanner} from "../components/ErrorBanner";
 import Footer from "../components/Footer";
+import {Reviews} from "../components/Review";
 
 const defaultGame = {
     gameId: -1,
@@ -54,7 +55,7 @@ const Game = () => {
         api.get("games/platforms")
             .then((res) => {
                 setPlatforms(res.data);
-            }, (error) =>{
+            }, (error) => {
             })
     }, [])
 
@@ -74,6 +75,7 @@ const Game = () => {
             <div className="flexContainer">
                 <GameDetails game={game} genres={genres} platforms={platforms}></GameDetails>
             </div>
+            <Reviews gameId={game.gameId}/>
             <Footer title=""/>
         </div>
     )
