@@ -5,4 +5,17 @@ const client = axios.create({
     headers: {"Content-Type":"application/json"}
 })
 
+// Auth token interceptor by chat gpt --start--
+client.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            config.headers['X-Auth'] = token;
+        }
+        return config;
+    },
+    (error) => Promise.reject(error)
+);
+// Auth token interceptor by chat gpt --end--
+
 export default client;

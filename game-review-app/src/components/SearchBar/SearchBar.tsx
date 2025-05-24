@@ -89,8 +89,8 @@ const SearchBar = (props:SearchProps) => {
                         <option value={ALPHABETICAL_DESC}>Z-A</option>
                         <option value={PRICE_ASC}>Price, low to high</option>
                         <option value={PRICE_DESC}>Price, high to low</option>
-                        <option value={CREATED_ASC}>Created, new to old</option>
-                        <option value={CREATED_DESC}>Created, old to new</option>
+                        <option value={CREATED_ASC} selected>Created, old to new</option>
+                        <option value={CREATED_DESC}>Created, new to old</option>
                         <option value={RATING_ASC}>Rating, low to high</option>
                         <option value={RATING_DESC}>Rating, high to low</option>
                     </select>

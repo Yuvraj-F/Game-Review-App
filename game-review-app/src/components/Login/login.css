@@ -1,0 +1,39 @@
+.formStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.inputInline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textInput {
+    font-size: var(--max-font-size);
+    width: clamp(400px, 50%, 800px);
+    height: 50%;
+    background: var(--blue-semi-trans);
+    color: var(--blue);
+    border: var(--border);
+}
+
+.textInput::placeholder {
+    color: var(--blue-disable);
+}
+
+.primaryButton {
+    font-size: var(--max-font-size);
+    height: 50%;
+    background: var(--blue-semi-trans);
+    color: var(--blue);
+    border: var(--border);
+}
+
+.primaryButton:hover {
+    background: var(--blue-disable);
+}
