@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {api, isLoggedIn} from "../utils";
+import {isLoggedIn} from "../utils";
 import Header from "../components/Header";
 import {ErrorBanner} from "../components/ErrorBanner";
+import {Register} from "../components/Register"
 import Footer from "../components/Footer";
-import {Login} from "../components/Login"
 
-const LoginPage = () => {
+
+const RegisterPage = () => {
 
     const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ const LoginPage = () => {
     const showError = (msg: string) => {
         setError(msg)
         setVisible(true)
-        setTimeout(() => setVisible(false), 5000);
+        setTimeout(() => setVisible(false), 8000);
     };
 
     React.useEffect(() => {
@@ -28,13 +29,13 @@ const LoginPage = () => {
     return (
         <>
             <div className="page">
-                <Header title="Login" />
+                <Header title="Register" />
                 <ErrorBanner message={error} visible={visible} />
-                <Login showError={showError}/>
+                <Register showError={showError}/>
                 <Footer title=""/>
             </div>
         </>
     )
 }
 
-export default LoginPage;
+export default RegisterPage;

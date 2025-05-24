@@ -10,7 +10,7 @@ client.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('authToken');
         if (token) {
-            config.headers['X-Auth'] = token;
+            config.headers['X-Authorization'] = token;
         }
         return config;
     },

@@ -4,12 +4,19 @@
     opacity: 0.8;
     border-bottom: var(--border);
     box-shadow: inset 0 0 4px;
+    text-align: center;
+    line-height: 640px;
+    background: var(--blue-semi-trans);
 }
 
 .gameImageLarge {
     width: 640px;
     height: 640px;
     border: var(--border);
+    font-size: 40px;
+    text-align: center;
+    line-height: 640px;
+    background: var(--blue-semi-trans);
 }
 
 .userImage {
@@ -17,4 +24,7 @@
     height: 80px;
     border: var(--border);
     margin: 8px;
+    text-align: center;
+    line-height: 640px;
+    background: var(--blue-semi-trans);
 }

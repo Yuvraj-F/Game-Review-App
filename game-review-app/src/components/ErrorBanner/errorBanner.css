@@ -1,4 +1,5 @@
 .errorBanner {
+    margin: 40px;
     padding: 16px;
     background: var(--red-semi-trans);
     color: var(--red);

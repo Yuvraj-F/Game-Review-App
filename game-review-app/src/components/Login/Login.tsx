@@ -14,6 +14,7 @@ const Login = (props:LoginProps) => {
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
 
+    // Handle login provided by chat gpt --start--
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -26,9 +27,10 @@ const Login = (props:LoginProps) => {
             navigate('/');
 
         } catch (error: any) {
-            showError(error.response?.data?.error || 'Login failed');
+            showError(error.response?.statusText || 'Login failed');
         }
     }
+    // Handle login provided by chat gpt --end--
 
     return (
         <>
@@ -36,12 +38,12 @@ const Login = (props:LoginProps) => {
                 <div className="inputInline">
                     <label style={{marginRight:12}}>Email: </label>
                     <input type="email" value={email} onChange={e => setEmail(e.target.value)} required
-                           className="textInput" maxLength={64} placeholder="type your email"/>
+                           className="textInput" minLength={1} maxLength={256} placeholder="Type your email"/>
                 </div>
                 <div className="inputInline">
                     <label style={{marginRight:12}}>Password: </label>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} required
-                           className="textInput" maxLength={64} placeholder="type your password"/>
+                           className="textInput" maxLength={64} placeholder="Type your password"/>
                 </div>
                 <button type="submit" className="primaryButton">Log In</button>
             </form>

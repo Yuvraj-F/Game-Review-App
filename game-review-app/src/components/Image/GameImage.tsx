@@ -17,12 +17,8 @@ const GameImage = (props:GameImageProp) => {
         styleClass = "gameImageLarge"
     }
 
-    const handleError = (event:React.SyntheticEvent<HTMLImageElement>) => {
-        event.currentTarget.src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png"
-    }
-
     return (
-        <img src={gameImage} className={styleClass} alt="" onError={handleError} />
+        <img src={gameImage} className={styleClass} alt="404. Image not found."/>
     )
 }
 
