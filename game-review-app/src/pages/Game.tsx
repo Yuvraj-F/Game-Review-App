@@ -70,13 +70,13 @@ const Game = () => {
 
     return (
         <div className="page">
-            <Header title="" />
+            <Header showError={showError}/>
             <ErrorBanner message={error} visible={visible} />
             <div className="flexContainer">
                 <GameDetails game={game} genres={genres} platforms={platforms}></GameDetails>
             </div>
             <Reviews gameId={game.gameId}/>
-            <Footer title=""/>
+            <Footer />
         </div>
     )
 }

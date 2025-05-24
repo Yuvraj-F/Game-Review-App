@@ -1,0 +1,8 @@
+.imagePicker.button {
+    color:var(--blue);
+    background: var(--blue-semi-trans);
+}
+
+.togglePassword {
+    margin: 8px;
+}

@@ -20,11 +20,11 @@ const Games = () => {
 
     return (
         <div className="page">
-            <Header title="" />
+            <Header showError={showError}/>
             <SearchBar setGameResults={setGameResults} showError={showError}/>
             <ErrorBanner message={error} visible={visible} />
             <GameList games={gameResults}></GameList>
-            <Footer title=""/>
+            <Footer />
         </div>
     )
 }

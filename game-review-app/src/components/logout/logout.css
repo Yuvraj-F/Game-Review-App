@@ -1,0 +1,11 @@
+.logoutButton {
+    font-size: var(--max-font-size);
+    color: var(--blue-disable);
+    background: transparent;
+    border: 0;
+    margin:8px;
+}
+
+.logoutButton:hover {
+    color: var(--blue);
+}

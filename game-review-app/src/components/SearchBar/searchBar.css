@@ -6,6 +6,7 @@
 
     min-width: var(--min-width);
     padding: var(--box-margin);
+    margin-top: var(--box-margin);
 }
 
 .searchInline {

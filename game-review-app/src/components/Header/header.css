@@ -1,9 +1,27 @@
 .headerStyle {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
+    padding: 20px;
     height: var(--header-height);
     z-index: 1000;
+}
+
+.lineSeparator {
+    width: 100%;
+    border-bottom: var(--border);
+}
+
+.linkStyle {
+    font-size: var(--max-font-size);
+    font-weight: normal;
+    text-decoration: none;
+    color: var(--blue-disable);
+    margin:8px;
+}
+
+.linkStyle:hover {
+    color: var(--blue);
 }

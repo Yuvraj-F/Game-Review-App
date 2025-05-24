@@ -1,17 +1,27 @@
+import {Logout} from "../logout"
+import {Link} from 'react-router-dom';
 import "./header.css";
 
 interface HeaderProp {
-    title:string
+    showError: (msg:string) => void
 }
 
 const Header = (props:HeaderProp) => {
 
-    const title = props.title
+    const showError = props.showError
 
     return (
-        <div className="headerStyle">
-            {title.trim() === ""? <br/> : <h1>{title}</h1>}
-        </div>
+        <>
+            <div className="headerStyle">
+                <div>
+                    <Link to="/search" className="linkStyle">Search</Link>
+                    <Logout showError={showError}/>
+                </div>
+
+            </div>
+            <div className="lineSeparator"></div>
+        </>
+
     )
 }
 

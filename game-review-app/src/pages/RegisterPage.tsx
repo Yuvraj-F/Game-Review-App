@@ -29,10 +29,11 @@ const RegisterPage = () => {
     return (
         <>
             <div className="page">
-                <Header title="Register" />
+                <Header showError={showError}/>
                 <ErrorBanner message={error} visible={visible} />
+                <h1>Register</h1>
                 <Register showError={showError}/>
-                <Footer title=""/>
+                <Footer/>
             </div>
         </>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {api, isLoggedIn} from "../utils";
+import {isLoggedIn} from "../utils";
 import Header from "../components/Header";
 import {ErrorBanner} from "../components/ErrorBanner";
 import Footer from "../components/Footer";
@@ -28,10 +28,11 @@ const LoginPage = () => {
     return (
         <>
             <div className="page">
-                <Header title="Login" />
+                <Header showError={showError}/>
                 <ErrorBanner message={error} visible={visible} />
+                <h1>Login</h1>
                 <Login showError={showError}/>
-                <Footer title=""/>
+                <Footer/>
             </div>
         </>
     )
