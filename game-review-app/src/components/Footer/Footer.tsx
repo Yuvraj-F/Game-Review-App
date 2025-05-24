@@ -1,18 +1,18 @@
-import "./header.css";
+import "./footer.css";
 
-interface HeaderProp {
+interface FooterProp {
     title:string
 }
 
-const Header = (props:HeaderProp) => {
+const Footer = (props:FooterProp) => {
 
     const title = props.title
 
     return (
-        <div className="headerStyle">
+        <div className="footerStyle">
             {title.trim() === ""? <br/> : <h1>{title}</h1>}
         </div>
     )
 }
 
-export default Header;
+export default Footer;

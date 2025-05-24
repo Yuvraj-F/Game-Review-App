@@ -13,8 +13,8 @@ const Filter = (props:filterProps) => {
     const [price, setPrice] = React.useState(Number.POSITIVE_INFINITY)
     const [selectedGenreIds, setSelectedGenreIds] = React.useState<number[]>([])
     const [selectedPlatformIds, setSelectedPlatformIds] = React.useState<number[]>([])
-    const [Genres, setSelectedGenres] = React.useState<Genre[]>([])
-    const [Platforms, setSelectedPlatforms] = React.useState<Platform[]>([])
+    const [genres, setSelectedGenres] = React.useState<Genre[]>([])
+    const [platforms, setSelectedPlatforms] = React.useState<Platform[]>([])
 
     React.useEffect(() => {
         api.get("games/genres")
@@ -69,7 +69,7 @@ const Filter = (props:filterProps) => {
 
     const getGenres = () => {
         return (
-            Genres.map((genre:Genre) => {
+            genres.map((genre:Genre) => {
                     const buttonClass = selectedGenreIds.includes(genre.genreId)? "genreButton selected": "genreButton"
                     return (
                         <button key={genre.genreId} className={buttonClass}
@@ -80,12 +80,11 @@ const Filter = (props:filterProps) => {
                 }
             )
         )
-
     }
 
     const getPlatforms = () => {
         return (
-            Platforms.map((platform:Platform) => {
+            platforms.map((platform:Platform) => {
                 const buttonClass = selectedPlatformIds.includes(platform.platformId)? "platformButton selected": "platformButton"
                 return (
                     <button key={platform.platformId} className={buttonClass}
@@ -96,7 +95,6 @@ const Filter = (props:filterProps) => {
                 }
             )
         )
-
     }
 
     return (

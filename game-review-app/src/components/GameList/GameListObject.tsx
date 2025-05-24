@@ -31,8 +31,7 @@ const GameListObject = (props: gameProp) => {
                         <div>by {game.creatorFirstName} {game.creatorLastName}</div>
                         <div>${game.price}</div>
                     </div>
-                    <div className="genreTag">{genre.name}
-                    </div>
+                    <div className="genreTag">{genre.name}</div>
                     <div className="gameListObjectFooter">
                         <div>{creationDate}</div>
                         <div className="ratingText">{game.rating}/10</div>

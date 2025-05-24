@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import {ErrorBanner} from "../components/ErrorBanner";
 import "./page.css"
+import Footer from "../components/Footer";
 
 const Games = () => {
 
@@ -19,10 +20,11 @@ const Games = () => {
 
     return (
         <div className="page">
-            {/*<Header title="Games" />*/}
+            <Header title="" />
             <SearchBar setGameResults={setGameResults} showError={showError}/>
             <ErrorBanner message={error} visible={visible} />
             <GameList games={gameResults}></GameList>
+            <Footer title=""/>
         </div>
     )
 }

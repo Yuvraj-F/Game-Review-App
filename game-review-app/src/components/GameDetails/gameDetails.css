@@ -1,3 +1,14 @@
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: var(--min-width);
+    max-width: var(--min-width);
+    gap: 12px;
+    overflow-wrap: break-word;
+}
+
 .ratingBase {
     display: flex;
 
@@ -10,7 +21,6 @@
     align-items: center;
 
     clip-path: circle();
-
 }
 
 .ratingRing {
